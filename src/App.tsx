@@ -12,6 +12,8 @@ function App() {
           ))}
         </ul>
       }
+
+      <button onClick={()=>setTasks(["Hug the cat", ...tasks])}> Add</button>
     </div>
 }
 
