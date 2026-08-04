@@ -54,8 +54,8 @@ const App = () => {
     <h1>My Task Master</h1>
     <TaskInput
       addNewTask={handleAddNewTask}
+      clearTasks={handleClearTasks}
     />
-    <button type='reset' onClick={handleClearTasks}>Clear</button>
     <TaskList
       tasks={tasks}
       deleteTask={handleDeleteTask}
