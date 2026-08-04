@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react'
 import TaskInput from './components/TaskInput'
 import TaskLeft from './components/TaskLeft'
 import TaskList from './components/TaskList'
+import type { Task } from './type'
 
 const App = () => {
   const maxTasks = 10
 
-  const [tasks, setTasks] = useState<{ name: string, completed: boolean }[]>(() => {
+  const [tasks, setTasks] = useState<Task[]>(() => {
     const saved = localStorage.getItem("tasks")
     if (saved) return JSON.parse(saved)
     return [{ name: "Learn React", completed: false }]
@@ -19,9 +20,9 @@ const App = () => {
 
   const taskLeft = maxTasks - tasks.length
 
-  const handleAddNewTask = (newTask: { name: string, completed: boolean }) => {
+  const handleAddNewTask = (newTask: Task) => {
     if (tasks.length < maxTasks) {
-      setTasks([...tasks, { name: newTask.name, completed: newTask.completed }])
+      setTasks([...tasks, { name: newTask.name, completed: newTask.completed , dueDate: newTask.dueDate}])
     }
   }
 
@@ -40,7 +41,7 @@ const App = () => {
   const handleFinishTask = (indexToFinish: number) => {
     setTasks(tasks.map((task, idx) => (
       (idx == indexToFinish)
-        ? { name: task.name, completed: !task.completed }
+        ? { ...task, completed: !task.completed }
         : task
     )))
   }

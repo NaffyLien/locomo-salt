@@ -1,7 +1,8 @@
+import type { Task } from '../../type'
 import './taskList.css'
 
 type TaskListProps = {
-  tasks: { name: string, completed: boolean }[],
+  tasks: Task[],
   deleteTask: (index: number) => void
   finishTask: (index: number) => void
 }
@@ -17,7 +18,11 @@ const TaskList = ({ tasks, deleteTask, finishTask }: TaskListProps) => {
             id={`task-${index}`}
             onChange={()=>finishTask(index)}
           />
-          <label htmlFor={`task-${index}`} className={task.completed? 'taskFinish true': 'taskFinish false'}>{task.name}</label>
+          <label 
+            htmlFor={`task-${index}`} 
+            className={task.completed? 'taskFinish true': 'taskFinish false'}
+          >
+            {task.name +" "+ task?.dueDate }</label>
           <button onClick={() => deleteTask(index)}>Delete</button>
         </li>
       </div>
