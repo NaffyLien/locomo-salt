@@ -14,10 +14,10 @@ const TaskList = ({ tasks, deleteTask, finishTask }: TaskListProps) => {
           <input
             type="checkbox"
             checked={task.completed}
-            id={index.toString()}
+            id={`task-${index}`}
             onClick={()=>finishTask(index)}
           />
-          <label htmlFor={index.toString()} className={'taskFinish'+task.completed}>{task.name}</label>
+          <label htmlFor={`task-${index}`} className={task.completed? 'taskFinish true': 'taskFinish false'}>{task.name}</label>
           <button onClick={() => deleteTask(index)}>Delete</button>
         </li>
       </div>
