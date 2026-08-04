@@ -26,6 +26,12 @@ const App = () => {
     }
   }
 
+  const handleEditTask = (indexTask: number, taskEdit: Task) => {
+    setTasks(tasks.map((task, index)=>(
+      indexTask == index? taskEdit : task
+    )))
+  }
+
   const handleDeleteTask = (indexToDelete: number) => {
     setTasks(tasks.filter((_, idx) => (
       idx !== indexToDelete
@@ -60,6 +66,7 @@ const App = () => {
       tasks={tasks}
       deleteTask={handleDeleteTask}
       finishTask={handleFinishTask}
+      editTask={handleEditTask}
     />
     <TaskLeft
       lfTask={taskLeft}

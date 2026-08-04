@@ -1,13 +1,18 @@
 import type { Task } from '../../type'
+import TaskEdit from '../TaskEdit'
 import './taskList.css'
+import { useState } from 'react'
 
 type TaskListProps = {
   tasks: Task[],
   deleteTask: (index: number) => void
   finishTask: (index: number) => void
+  editTask: (index:number, task: Task) => void
 }
 
-const TaskList = ({ tasks, deleteTask, finishTask }: TaskListProps) => {
+const TaskList = ({ tasks, deleteTask, finishTask, editTask }: TaskListProps) => {
+  const [edit, setEdit] = useState<number|null>()
+
   return <ul className='taskList'>
     {tasks.map((task, index) => (
       <div key={index}>
@@ -21,6 +26,7 @@ const TaskList = ({ tasks, deleteTask, finishTask }: TaskListProps) => {
           <label
             htmlFor={`task-${index}`}
             className={task.completed ? 'taskFinish true' : 'taskFinish false'}
+            onDoubleClick={()=>setEdit(index)}
           >
             {task.name + " "}
             {task.dueDate ? task.dueDate : null}
@@ -28,6 +34,12 @@ const TaskList = ({ tasks, deleteTask, finishTask }: TaskListProps) => {
           </label>
           <button onClick={() => deleteTask(index)}>Delete</button>
         </li>
+        {edit == index && <TaskEdit
+          idx={index}
+          modifTask={task}
+          editTask={editTask}
+          clearTasks={()=>setEdit(null)}
+        />}
       </div>
     ))}
   </ul>
