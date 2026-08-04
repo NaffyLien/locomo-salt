@@ -5,13 +5,17 @@ import TaskLeft from './components/TaskLeft'
 import TaskList from './components/TaskList'
 
 const App = () => {
-  const maxTasks = 9
+  const maxTasks = 10
   const dfTasks = [
     {name : "Learn React", completed: false},
     {name : "Build Project", completed: false},
     {name : "Go for a walk", completed: false},
   ]
   const [tasks, setTasks] = useState(dfTasks)
+  const fnsTasks= (tasks.filter((task) => (
+      task.completed == true
+    ))).length
+    
   const taskLeft = maxTasks - tasks.length
 
   const handleAddNewTask = (newTask: {name: string, completed: boolean}) => {
@@ -27,7 +31,9 @@ const App = () => {
   }
 
   const handleClearTasks = () =>{
-    setTasks([])
+    setTasks(tasks.filter((task)=>(
+      task.completed == false
+    )))
   }
 
   const handleFinishTask = (indexToFinish:number) => {
@@ -49,6 +55,7 @@ const App = () => {
     />
     <TaskLeft
       lfTask={taskLeft}
+      fnsTask={fnsTasks}
     />
   </div>
 }
