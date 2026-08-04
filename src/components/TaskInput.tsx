@@ -7,7 +7,7 @@ type TaskInputProps = {
 
 const TaskInput = ({ addNewTask }: TaskInputProps) => {
   const [newTaskName, setNewTaskName] = useState('')
-  const [newTaskDate, setNewTaskDate] = useState<string>(new Date().toISOString().slice(0, 10))
+  const [newTaskDate, setNewTaskDate] = useState<string>()
 
   const handleAddNewTask = () => {
     if (newTaskName.trim() !== '') {
@@ -31,6 +31,7 @@ const TaskInput = ({ addNewTask }: TaskInputProps) => {
       type='date'
       name='dueDate'
       id='dueDate'
+      min={new Date().toISOString().slice(0,10)}
       value={newTaskDate}
       onChange={(e) => setNewTaskDate(e.target.value)}
     />

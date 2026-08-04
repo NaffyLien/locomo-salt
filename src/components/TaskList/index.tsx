@@ -16,13 +16,13 @@ const TaskList = ({ tasks, deleteTask, finishTask }: TaskListProps) => {
             type="checkbox"
             checked={task.completed}
             id={`task-${index}`}
-            onChange={()=>finishTask(index)}
+            onChange={() => finishTask(index)}
           />
-          <label 
-            htmlFor={`task-${index}`} 
-            className={task.completed? 'taskFinish true': 'taskFinish false'}
+          <label
+            htmlFor={`task-${index}`}
+            className={task.completed ? 'taskFinish true' : 'taskFinish false'}
           >
-            {task.name +" "+ task?.dueDate }</label>
+            {task.name + " "}{task.dueDate ? task.dueDate : null}</label>
           <button onClick={() => deleteTask(index)}>Delete</button>
         </li>
       </div>
