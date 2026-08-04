@@ -15,7 +15,7 @@ const TaskList = ({ tasks, deleteTask, finishTask }: TaskListProps) => {
             type="checkbox"
             checked={task.completed}
             id={`task-${index}`}
-            onClick={()=>finishTask(index)}
+            onChange={()=>finishTask(index)}
           />
           <label htmlFor={`task-${index}`} className={task.completed? 'taskFinish true': 'taskFinish false'}>{task.name}</label>
           <button onClick={() => deleteTask(index)}>Delete</button>
