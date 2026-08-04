@@ -22,7 +22,7 @@ const App = () => {
 
   const handleAddNewTask = (newTask: Task) => {
     if (tasks.length < maxTasks) {
-      setTasks([...tasks, { name: newTask.name, completed: newTask.completed , dueDate: newTask.dueDate}])
+      setTasks([...tasks, newTask])
     }
   }
 

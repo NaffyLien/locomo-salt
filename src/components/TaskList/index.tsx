@@ -22,7 +22,10 @@ const TaskList = ({ tasks, deleteTask, finishTask }: TaskListProps) => {
             htmlFor={`task-${index}`}
             className={task.completed ? 'taskFinish true' : 'taskFinish false'}
           >
-            {task.name + " "}{task.dueDate ? task.dueDate : null}</label>
+            {task.name + " "}
+            {task.dueDate ? task.dueDate : null}
+            {task.category}
+          </label>
           <button onClick={() => deleteTask(index)}>Delete</button>
         </li>
       </div>

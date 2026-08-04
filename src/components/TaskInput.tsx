@@ -8,13 +8,15 @@ type TaskInputProps = {
 const TaskInput = ({ addNewTask }: TaskInputProps) => {
   const [newTaskName, setNewTaskName] = useState('')
   const [newTaskDate, setNewTaskDate] = useState<string>()
+  const [newTaskCtg, setNewTaskCtg] = useState<Task['category']>('Study')
 
   const handleAddNewTask = () => {
     if (newTaskName.trim() !== '') {
       addNewTask({ 
         name: newTaskName, 
         completed: false, 
-        dueDate: newTaskDate
+        dueDate: newTaskDate,
+        category: newTaskCtg
       })
       setNewTaskName('')
     }
@@ -35,6 +37,17 @@ const TaskInput = ({ addNewTask }: TaskInputProps) => {
       value={newTaskDate}
       onChange={(e) => setNewTaskDate(e.target.value)}
     />
+    <select 
+      id="category"
+      value={newTaskCtg}
+      onChange={(e) => setNewTaskCtg(e.target.value as Task['category'])}
+      >
+        <option >Work</option>
+        <option >Study</option>
+        <option >Personal</option>
+        <option >Shopping</option>
+        <option >Other</option>
+    </select>
     <button onClick={handleAddNewTask}>Add task</button>
   </section>
 }

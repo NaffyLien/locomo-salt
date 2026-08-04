@@ -1,5 +1,6 @@
 export type Task = {
   name: string,
   completed: boolean,
-  dueDate?: string
+  dueDate?: string,
+  category: "Work" | "Study" | "Personal" | "Shopping" | "Other"
 }
