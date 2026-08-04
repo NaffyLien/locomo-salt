@@ -1,0 +1,8 @@
+.taskList{}
+
+.taskFinishfalse{
+  text-decoration: none;
+}
+.taskFinishtrue{
+  text-decoration: line-through;
+}

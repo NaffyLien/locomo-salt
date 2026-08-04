@@ -6,14 +6,17 @@ import TaskList from './components/TaskList'
 
 const App = () => {
   const maxTasks = 9
-
-  const [tasks, setTasks] = useState(["Learn React", "Build Project", "Go for a walk"])
-
+  const dfTasks = [
+    {name : "Learn React", completed: false},
+    {name : "Build Project", completed: false},
+    {name : "Go for a walk", completed: false},
+  ]
+  const [tasks, setTasks] = useState(dfTasks)
   const taskLeft = maxTasks - tasks.length
 
-  const handleAddNewTask = (newTask:string) => {
+  const handleAddNewTask = (newTask: {name: string, completed: boolean}) => {
     if(tasks.length < maxTasks){
-      setTasks([...tasks, newTask])
+      setTasks([...tasks, {name:newTask.name, completed: newTask.completed}])
     }
   }
 
@@ -23,17 +26,27 @@ const App = () => {
     )))
   }
 
+  const handleClearTasks = () =>{
+    setTasks([])
+  }
+
+  const handleFinishTask = (indexToFinish:number) => {
+    setTasks(tasks.map((task, idx)=>(
+      task = (idx==indexToFinish)? {name: task.name, completed: !task.completed} : task
+    )))
+  }
+
   return <div>
     <h1>My Task Master</h1>
     <TaskInput
       addNewTask={handleAddNewTask}
     />
-
+    <button type='reset' onClick={handleClearTasks}>Clear</button>
     <TaskList
       tasks={tasks}
       deleteTask={handleDeleteTask}
+      finishTask={handleFinishTask}
     />
-
     <TaskLeft
       lfTask={taskLeft}
     />
