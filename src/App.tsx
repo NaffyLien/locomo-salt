@@ -27,8 +27,8 @@ const App = () => {
   }
 
   const handleEditTask = (indexTask: number, taskEdit: Task) => {
-    setTasks(tasks.map((task, index)=>(
-      indexTask == index? taskEdit : task
+    setTasks(tasks.map((task, index) => (
+      indexTask == index ? taskEdit : task
     )))
   }
 
@@ -58,19 +58,22 @@ const App = () => {
 
   return <div>
     <h1>My Task Master</h1>
-    <TaskInput
-      addNewTask={handleAddNewTask}
-      clearTasks={handleClearTasks}
-    />
-    <TaskList
-      tasks={tasks}
-      deleteTask={handleDeleteTask}
-      finishTask={handleFinishTask}
-      editTask={handleEditTask}
-    />
+    <article className='taskArticle'>
+      <TaskInput
+        addNewTask={handleAddNewTask}
+      />
+      <TaskList
+        tasks={tasks}
+        deleteTask={handleDeleteTask}
+        finishTask={handleFinishTask}
+        editTask={handleEditTask}
+      />
+
+    </article>
     <TaskLeft
       lfTask={taskLeft}
       fnsTask={fnsTasks}
+      clearTask={handleClearTasks}
     />
   </div>
 }

@@ -1,3 +1,8 @@
-.taskInput *{
-  display: block;
+.taskInput {
+  display: flex;
+  flex-direction: column;
+
+  *{
+    width: fit-content;
+  }
 }

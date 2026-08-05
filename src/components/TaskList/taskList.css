@@ -1,8 +1,15 @@
-.taskList{}
+.taskList{
+  max-width: 50%;
+}
 
 .taskFinish.false{
   text-decoration: none;
 }
 .taskFinish.true{
   text-decoration: line-through;
+}
+
+li{
+  width: fit-content;
+  display: block;
 }

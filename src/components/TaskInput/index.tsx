@@ -4,10 +4,9 @@ import './taskInput.css'
 
 type TaskInputProps = {
   addNewTask: (task: Task) => void,
-  clearTasks: () => void
 }
 
-const TaskInput = ({ addNewTask, clearTasks: clearTask }: TaskInputProps) => {
+const TaskInput = ({ addNewTask }: TaskInputProps) => {
   const [newTask, setNewTask] = useState<Task>({
     name: '',
     completed: false,
@@ -26,6 +25,7 @@ const TaskInput = ({ addNewTask, clearTasks: clearTask }: TaskInputProps) => {
   }
 
   return <section className='taskInput'>
+    <h2>Add new task</h2>
     <input
       className='tIName'
       type='text'
@@ -57,7 +57,6 @@ const TaskInput = ({ addNewTask, clearTasks: clearTask }: TaskInputProps) => {
     <button
       className='tIBtn'
       onClick={handleAddNewTask}>Add task</button>
-    <button type='reset' onClick={clearTask}>Clear</button>
   </section>
 }
 
