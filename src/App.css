@@ -14,6 +14,9 @@
   }
 }
 
+*{
+  font-size: small;
+}
 h1 {
   font-size: x-large;
 }
