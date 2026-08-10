@@ -1,5 +1,23 @@
-.taskArticle {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.app {
+  position: relative;
+
+
+  .taskArticle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+h1{
+  font-size:x-large;
+}
+h2{
+  font-size:large;
+}
+h3{
+  font-size:medium;
+}
+h4{
+  font-size:small;
 }

@@ -4,28 +4,23 @@ import './taskInput.css'
 
 type TaskInputProps = {
   addNewTask: (task: Task) => void,
+  showTaskInput: () => void
 }
 
-const TaskInput = ({ addNewTask }: TaskInputProps) => {
-  const [newTask, setNewTask] = useState<Task>({
-    name: '',
-    completed: false,
-    category: "Study"
-  })
+const TaskInput = ({ addNewTask, showTaskInput }: TaskInputProps) => {
+  const defaultTast = { name: '', category: 'Study', details: '', completed: false, }
+  const [newTask, setNewTask] = useState<Task>(defaultTast as Task)
 
   const handleAddNewTask = () => {
     if (newTask.name.trim() !== '') {
       addNewTask(newTask)
-      setNewTask({
-        name: '',
-        completed: false,
-        category: "Study"
-      })
+      setNewTask(defaultTast as Task)
     }
   }
 
   return <section className='taskInput'>
-    <h2>Add new task</h2>
+    <div>
+      <div className="part">
     <input
       className='tIName'
       type='text'
@@ -57,6 +52,11 @@ const TaskInput = ({ addNewTask }: TaskInputProps) => {
     <button
       className='tIBtn'
       onClick={handleAddNewTask}>Add task</button>
+        <button
+        className='tIBtn'
+        onClick={showTaskInput}>Cancel</button>
+      </div>
+    </div>
   </section>
 }
 

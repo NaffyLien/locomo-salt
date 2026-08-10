@@ -4,9 +4,15 @@ import TaskInput from './components/TaskInput'
 import TaskLeft from './components/TaskLeft'
 import TaskList from './components/TaskList'
 import type { Task } from './type'
+import HeaderSection from './components/HeaderSection'
 
 const App = () => {
   const maxTasks = 10
+  const [newNote, setNewNote] = useState(false)
+
+  const handleTaskInputShow = () => {
+    setNewNote(!newNote)
+  }
 
   const [tasks, setTasks] = useState<Task[]>(() => {
     const saved = localStorage.getItem("tasks")
@@ -56,12 +62,16 @@ const App = () => {
     localStorage.setItem("tasks", JSON.stringify(tasks))
   }, [tasks])
 
-  return <div>
-    <h1>My Task Master</h1>
-    <article className='taskArticle'>
-      <TaskInput
+  return <div className='app'>
+    <HeaderSection
+      showTaskInput={handleTaskInputShow}
+    />
+    <article>
+      {newNote && <TaskInput
         addNewTask={handleAddNewTask}
-      />
+        showTaskInput={handleTaskInputShow}
+      />}
+
       <TaskList
         tasks={tasks}
         deleteTask={handleDeleteTask}
@@ -75,7 +85,7 @@ const App = () => {
       fnsTask={fnsTasks}
       clearTask={handleClearTasks}
     />
-  </div>
+  </div >
 }
 
 export default App
