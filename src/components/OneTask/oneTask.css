@@ -1,7 +1,7 @@
 .oneTask {
   /* flex: 1; */
 
-  flex: 1 1 15rem;
+  flex: 0 1 13rem;
 
   border: 1px solid var(--border);
   border-radius: 15px;
