@@ -1,23 +1,31 @@
 .app {
   position: relative;
 
-
   .taskArticle {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
   }
+
+  >* {
+    width: 1050px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
 
-h1{
-  font-size:x-large;
+h1 {
+  font-size: x-large;
 }
-h2{
-  font-size:large;
+
+h2 {
+  font-size: large;
 }
-h3{
-  font-size:medium;
+
+h3 {
+  font-size: medium;
 }
-h4{
-  font-size:small;
+
+h4 {
+  font-size: small;
 }
