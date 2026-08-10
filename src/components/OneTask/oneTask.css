@@ -1,15 +1,14 @@
 .oneTask {
   /* flex: 1; */
 
-  width: 18rem;
-  max-width: 100%;
+  flex: 1 1 15rem;
 
   border: 1px solid var(--border);
   border-radius: 15px;
   padding: 1rem .5rem;
   box-sizing: border-box;
   overflow-x: hidden;
-
+  overflow-wrap: break-word;
   position: relative;
 
   .toogle {

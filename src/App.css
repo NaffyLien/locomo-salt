@@ -1,10 +1,15 @@
 .app {
   position: relative;
 
+  article {
+    margin: 1rem auto;
+  }
+
   .taskArticle {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+
   }
 
   >* {
@@ -14,9 +19,10 @@
   }
 }
 
-*{
+* {
   font-size: small;
 }
+
 h1 {
   font-size: x-large;
 }
