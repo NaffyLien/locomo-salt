@@ -1,7 +1,7 @@
 .app {
   position: relative;
 
-  article, 
+  article,
   p {
     margin: 1rem auto;
   }
@@ -38,4 +38,21 @@ h3 {
 
 h4 {
   font-size: small;
+}
+
+button {
+  padding: .5rem .8rem;
+  border-radius: 50px;
+  box-shadow: var(--shadow);
+
+  &.primary {
+    border: 1 solid var(--accent-border);
+    background-color: var(--bg);
+  }
+
+  &.secondary {
+    border: 1 solid var(--border);
+    background-color: var(--accent-bg);
+    color: var(--text);
+  }
 }
