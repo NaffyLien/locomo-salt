@@ -1,2 +1,3 @@
 # locomo-salt
-potfolio cv maker
+
+note taker
