@@ -7,7 +7,7 @@ const TaskList = ({ tasks, deleteTask, finishTask, editTask }: TaskListProps) =>
   // const [edit, setEdit] = useState<number | null>()
 
   return <section className='taskList'>
-    <h2>Task lists</h2>
+    <h2 className='listTitle'>Task lists</h2>
     <div className='list'>
       {tasks.map((task, index) => (
         <OneTask

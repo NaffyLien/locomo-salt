@@ -1,5 +1,13 @@
 .taskList {
 
+  /*h2*/
+  .listTitle{
+    margin: 2rem 0 .5rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* div */
   .list {
 
     @media (max-width : 2126px) {
