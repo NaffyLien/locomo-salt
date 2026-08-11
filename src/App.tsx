@@ -17,7 +17,7 @@ const App = () => {
   const [tasks, setTasks] = useState<Task[]>(() => {
     const saved = localStorage.getItem("tasks")
     if (saved) return JSON.parse(saved)
-    return [{ name: "Learn React", completed: false }]
+    return [{ name: "Learn React", completed: false, category:'Work' }]
   })
 
   const fnsTasks = (tasks.filter((task) => (
