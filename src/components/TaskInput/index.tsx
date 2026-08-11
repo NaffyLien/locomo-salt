@@ -62,10 +62,10 @@ const TaskInput = ({ addNewTask, showTaskInput }: TaskInputProps) => {
       </div>
       <div className="part">
         <button
-          className='tIBtn'
+          className='tIBtn secondary'
           onClick={handleAddNewTask}>Add task</button>
         <button
-          className='tIBtn'
+          className='tIBtn primary'
           onClick={showTaskInput}>Cancel</button>
       </div>
     </div>
