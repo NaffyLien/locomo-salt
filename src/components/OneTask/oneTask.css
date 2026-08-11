@@ -1,16 +1,17 @@
 .oneTask {
-  /* flex: 1; */
-
-  flex: 0 1 13rem;
-
   border: 1px solid var(--border);
   border-radius: 15px;
   padding: 1rem .5rem;
   box-sizing: border-box;
   overflow-x: hidden;
-  overflow-wrap: break-word;
   position: relative;
 
+  break-inside: avoid;
+  /* Prevents items from splitting across columns */
+  /* width: calc(50% - .4rem); */
+    margin-bottom: .8rem;
+
+  /* 2 columns with gap */
   .toogle {
     position: absolute;
     top: .5rem;
@@ -77,6 +78,6 @@
   background-color: #00668B;
 }
 
-.undefined{
+.undefined {
   background-color: #81ABD7;
 }

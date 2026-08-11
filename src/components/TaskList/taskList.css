@@ -1,22 +1,40 @@
-.taskList{
+.taskList {
 
-  .list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: .8rem
+  .list {
+
+    @media (max-width : 2126px) {
+      columns: 5;
+      column-gap: .8rem;
+    }
+
+    @media (max-width : 1022px) {
+      columns: 4;
+      column-gap: .8rem;
+    }
+
+    @media (max-width : 850px) {
+      columns: 3;
+      column-gap: .8rem;
+
+    }
+
+    @media (max-width : 500px) {
+      columns: 2;
+      column-gap: .8rem;
+
+    }
   }
-
 }
 
-.taskFinish.false{
+.taskFinish.false {
   text-decoration: none;
 }
-.taskFinish.true{
+
+.taskFinish.true {
   text-decoration: line-through;
 }
 
-li{
+li {
   width: fit-content;
   display: block;
 }
