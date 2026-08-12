@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import type { Task } from '../../type'
 import './taskEdit.css'
 
@@ -10,6 +10,12 @@ type TaskEditProps = {
 }
 
 const TaskEdit = ({idx, modifTask, editTask, clearTasks }: TaskEditProps) => {
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    inputRef.current?.focus()
+  }, [])
+
   const [newTask, setNewTask] = useState<Task>(modifTask)
 
   const handleEditTask = () => {
@@ -23,6 +29,7 @@ const TaskEdit = ({idx, modifTask, editTask, clearTasks }: TaskEditProps) => {
     <div>
       <div className="part">
         <input
+          ref={inputRef}
           className='tIName'
           type='text'
           placeholder='Insert next task here'

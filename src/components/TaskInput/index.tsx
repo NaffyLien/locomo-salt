@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import type { Task } from '../../type'
 import './taskInput.css'
 
@@ -8,7 +8,14 @@ type TaskInputProps = {
 }
 
 const TaskInput = ({ addNewTask, showTaskInput }: TaskInputProps) => {
+
+  const inputRef = useRef<HTMLInputElement>(null)
   const defaultTast = { name: '', category: 'Study', details: '', completed: false, }
+
+  useEffect(() => {
+    inputRef.current?.focus()
+  }, [])
+
   const [newTask, setNewTask] = useState<Task>(defaultTast as Task)
 
   const handleAddNewTask = () => {
@@ -23,6 +30,7 @@ const TaskInput = ({ addNewTask, showTaskInput }: TaskInputProps) => {
     <div>
       <div className="part">
         <input
+          ref={inputRef}
           className='tIName'
           type='text'
           placeholder='Insert next task here'
