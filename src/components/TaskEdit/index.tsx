@@ -15,48 +15,60 @@ const TaskEdit = ({idx, modifTask, editTask, clearTasks }: TaskEditProps) => {
   const handleEditTask = () => {
     if (newTask.name.trim() !== '') {
       editTask(idx, newTask)
-      setNewTask({
-        name: '',
-        completed: false,
-        category: "Study"
-      })
       clearTasks()
     }
   }
 
   return <section className='taskEdit'>
-    <input
-      className='tIName'
-      type='text'
-      placeholder='Insert next task here'
-      value={newTask.name}
-      onChange={(e) => setNewTask(prev => ({ ...prev, name: e.target.value }))}
-    />
-    <input
-      className='tIDate'
-      type='date'
-      name='dueDate'
-      id='dueDate'
-      min={new Date().toISOString().slice(0, 10)}
-      value={newTask.dueDate}
-      onChange={(e) => setNewTask(prev => ({ ...prev, dueDate: e.target.value }))}
-    />
-    <select
-      className='tICtg'
-      id="category"
-      value={newTask.category}
-      onChange={(e) => setNewTask(prev => ({ ...prev, category: e.target.value as Task['category'] }))}
-    >
-      <option >Work</option>
-      <option >Study</option>
-      <option >Personal</option>
-      <option >Shopping</option>
-      <option >Other</option>
-    </select>
-    <button
-      className='tIBtn'
-      onClick={handleEditTask}>Edit task</button>
-    <button type='reset' onClick={clearTasks}>Cancel</button>
+    <div>
+      <div className="part">
+        <input
+          className='tIName'
+          type='text'
+          placeholder='Insert next task here'
+          value={newTask.name}
+          onChange={(e) => setNewTask(prev => ({ ...prev, name: e.target.value }))}
+        />
+        <input
+          className='tIDate'
+          type='date'
+          name='dueDate'
+          id='dueDate'
+          min={new Date().toISOString().slice(0, 10)}
+          value={newTask.dueDate}
+          onChange={(e) => setNewTask(prev => ({ ...prev, dueDate: e.target.value }))}
+        />
+        <select
+          className='tICtg'
+          id="category"
+          value={newTask.category}
+          onChange={(e) => setNewTask(prev => ({ ...prev, category: e.target.value as Task['category'] }))}
+        >
+          <option >Work</option>
+          <option >Study</option>
+          <option >Personal</option>
+          <option >Shopping</option>
+          <option >Other</option>
+        </select>
+      </div>
+      <div className="part">
+        <textarea
+          name="details"
+          id="details"
+          value={newTask.details}
+          onChange={(e) => setNewTask(prev => ({ ...prev, details: e.target.value }))}
+          placeholder='Add text and despription of your note here'
+        ></textarea>
+      </div>
+      <div className="part">
+        <button
+          className='tIBtn secondary'
+          onClick={handleEditTask}>Edit task</button>
+        <button
+          className='tIBtn primary'
+          onClick={clearTasks}>Cancel</button>
+      </div>
+    </div>
   </section>
 }
 

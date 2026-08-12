@@ -1,19 +1,45 @@
 .taskEdit {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  padding: 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 15px;
+  justify-content: center;
+  background-color: var(--social-bg);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.taskEdit > div {
+  width: 100%;
+  max-width: 420px;
+  padding: 1.25rem;
+  border-radius: 20px;
   background-color: var(--bg);
   box-shadow: var(--shadow);
 }
 
+.taskEdit .part {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.taskEdit .part:last-child {
+  margin-bottom: 0;
+}
+
+.taskEdit .part > * {
+  line-height: 1.4;
+}
+
 .taskEdit input[type="text"],
 .taskEdit input[type="date"] {
-  padding: 0.35rem 0;
+  flex: 2;
+  padding: 0.4rem 0;
   border: 0;
   border-bottom: 1px solid var(--border);
   background: transparent;
@@ -23,12 +49,26 @@
 }
 
 .taskEdit select {
-  padding: 0.35rem 0.5rem;
+  flex: 1;
+  padding: 0.4rem 0.5rem;
   border: 1px solid var(--border);
   border-radius: 10px;
   background: var(--bg);
   color: inherit;
   font: inherit;
+}
+
+.taskEdit textarea {
+  flex: 1;
+  width: 100%;
+  min-height: 120px;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: inherit;
+  font: inherit;
+  resize: vertical;
 }
 
 .taskEdit button {
