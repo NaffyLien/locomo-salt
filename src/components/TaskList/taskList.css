@@ -1,7 +1,7 @@
 .taskList {
 
   /*h2*/
-  .listTitle{
+  .listTitle {
     margin: 2rem 0 .8rem;
     padding-bottom: .5rem;
     border-bottom: 1px solid var(--border);
@@ -9,27 +9,23 @@
 
   /* div */
   .list {
+    columns: 4;
+    column-gap: .8rem;
 
-    @media (max-width : 2126px) {
+    @media (max-width: 2126px) {
       columns: 5;
-      column-gap: .8rem;
     }
 
-    @media (max-width : 1022px) {
+    @media (max-width: 1022px) {
       columns: 4;
-      column-gap: .8rem;
     }
 
-    @media (max-width : 850px) {
+    @media (max-width: 850px) {
       columns: 3;
-      column-gap: .8rem;
-
     }
 
-    @media (max-width : 500px) {
+    @media (max-width: 500px) {
       columns: 2;
-      column-gap: .8rem;
-
     }
   }
 }
@@ -43,6 +39,7 @@
 }
 
 li {
-  width: fit-content;
   display: block;
+  break-inside: avoid;
+  margin-bottom: .8rem;
 }

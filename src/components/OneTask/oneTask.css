@@ -4,19 +4,14 @@
   padding: 1rem .5rem;
   box-sizing: border-box;
   overflow-x: hidden;
-  position: relative;
 
   break-inside: avoid;
-  /* Prevents items from splitting across columns */
-  /* width: calc(50% - .4rem); */
-    margin-bottom: .8rem;
+  margin-bottom: .8rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 
-  /* 2 columns with gap */
   .toogle {
-    position: absolute;
-    top: .5rem;
-    right: .5rem;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +36,7 @@
   .details {
     * {
       line-height: .8rem;
-      color: var(--bg);
+      color: var(--text);
       text-align: start;
     }
 
@@ -59,25 +54,25 @@
 }
 
 .work {
-  background-color: #81ABD7;
+  background-color: var(--work);
 }
 
 .study {
-  background-color: #73B200;
+  background-color: var(--study);
 }
 
 .personal {
-  background-color: #F7AF14;
+  background-color: var(--personal);
 }
 
 .shopping {
-  background-color: #B174FB;
+  background-color: var(--shopping);
 }
 
 .other {
-  background-color: #00668B;
+  background-color: var(--other);
 }
 
 .undefined {
-  background-color: #81ABD7;
+  background-color: var(--undefined);
 }

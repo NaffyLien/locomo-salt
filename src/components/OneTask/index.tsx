@@ -6,7 +6,7 @@ import check from '../../assets/checkbox-unchecked-svgrepo-com.svg'
 import { TaskType } from '../../utils'
 
 const OneTask = (props: TaskProps) => {
-  return <div className={`oneTask ${TaskType(props.task)}`}>
+  return <div className={`oneTask ${TaskType(props.task)} ${props.idx} `}>
     <div className='toogle'>
       <input
         type="checkbox"

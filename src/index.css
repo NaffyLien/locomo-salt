@@ -15,6 +15,13 @@
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
+  --work: #DBEAFF;
+  --study: #7baffc;
+  --personal: #F3EFFE;
+  --shopping: #F5D2FC;
+  --other: #aefae2;
+  --undefined: #fff;
+
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
@@ -61,4 +68,3 @@
   flex-direction: column;
   box-sizing: border-box;
 }
-
