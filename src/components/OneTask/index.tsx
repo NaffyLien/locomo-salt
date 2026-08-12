@@ -2,7 +2,8 @@ import type { TaskProps } from '../../type'
 import './oneTask.css'
 import edit from '../../assets/edit-4-svgrepo-com.svg'
 import del from '../../assets/delete-note-svgrepo-com.svg'
-import check from '../../assets/checkbox-unchecked-svgrepo-com.svg'
+import uncheck from '../../assets/checkbox-unchecked-svgrepo-com.svg'
+import check from '../../assets/check-square-svgrepo-com.svg'
 import { TaskType } from '../../utils'
 
 const OneTask = (props: TaskProps) => {
@@ -19,7 +20,10 @@ const OneTask = (props: TaskProps) => {
         className={props.task.completed ? 'taskFinish true' : 'taskFinish false'}
       >
         {/* // onDoubleClick={() => setEdit(props.idx)} */}
-        <img className='icon' src={check} alt='Delete task' />
+        {props.task.completed
+          ? <img className='icon' src={check} alt='Delete task' />
+          : <img className='icon' src={uncheck} alt='Delete task' />}
+
       </label>
 
       <button aria-label='Edit task' onClick={() => props.deleteTask(props.idx)}>
