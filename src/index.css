@@ -22,18 +22,20 @@
   --other: #aefae2;
   --undefined: #fff;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.45;
+  letter-spacing: 0.018em;
   color: var(--text);
   background: var(--bg);
+  color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   @media (max-width: 1024px) {
-    font-size: 16px;
+    font-size: 0.95rem;
   }
 }
 
@@ -61,10 +63,10 @@
   width: 1126px;
   max-width: 100%;
   margin: 0 auto;
-  /* text-align: center; */
-  /* border-inline: 1px solid var(--border);*/
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
   box-sizing: border-box;
 }

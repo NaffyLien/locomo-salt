@@ -1,3 +1,36 @@
-.taskInput *{
-  display: inline;
+.taskEdit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background-color: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+.taskEdit input[type="text"],
+.taskEdit input[type="date"] {
+  padding: 0.35rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  outline: none;
+}
+
+.taskEdit select {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: inherit;
+  font: inherit;
+}
+
+.taskEdit button {
+  margin-inline: auto;
 }

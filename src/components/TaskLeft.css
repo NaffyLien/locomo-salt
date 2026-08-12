@@ -1,0 +1,14 @@
+.taskLeft {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.taskLeft a {
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

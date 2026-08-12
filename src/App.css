@@ -1,57 +1,70 @@
 .app {
   position: relative;
-
-  article,
-  p {
-    margin: 1rem auto;
-  }
-
-  .taskArticle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
-  }
-
-  >* {
-    width: 1050px;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
 }
 
-* {
-  font-size: small;
+.app > * {
+  width: 100%;
+  max-width: 1126px;
+  margin-inline: auto;
+}
+
+.app article {
+  margin: 1.5rem auto;
+}
+
+.app p {
+  margin: 0.75rem auto;
 }
 
 h1 {
-  font-size: x-large;
+  font-family: var(--heading);
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: var(--text-h);
 }
 
 h2 {
-  font-size: large;
+  font-family: var(--heading);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--text-h);
 }
 
 h3 {
-  font-size: medium;
+  font-family: var(--heading);
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--text-h);
 }
 
 h4 {
-  font-size: small;
+  font-family: var(--heading);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text-h);
 }
 
 button {
-  padding: .5rem .8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.8rem;
   border-radius: 50px;
+  border: 1px solid transparent;
   box-shadow: var(--shadow);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 
   &.primary {
-    border: 1 solid var(--accent-border);
+    border-color: var(--accent-border);
     background-color: var(--bg);
   }
 
   &.secondary {
-    border: 1 solid var(--border);
+    border-color: var(--border);
     background-color: var(--accent-bg);
     color: var(--text);
   }

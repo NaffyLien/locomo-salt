@@ -1,78 +1,115 @@
 .oneTask {
+  break-inside: avoid;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
   border: 1px solid var(--border);
   border-radius: 15px;
-  padding: 1rem .5rem;
+  padding: 1rem;
+  background-color: var(--bg);
   box-sizing: border-box;
   overflow-x: hidden;
-
-  break-inside: avoid;
+  box-shadow: var(--shadow);
   margin-bottom: .8rem;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-
-  .toogle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    button,
-    label {
-      width: min-content;
-    }
-
-    input {
-      display: none;
-    }
-
-    button {
-      border: none;
-      width: min-content;
-      padding: 0;
-      background-color: transparent;
-    }
-  }
-
-  .details {
-    * {
-      line-height: .8rem;
-      color: var(--text);
-      text-align: start;
-    }
-
-    h3,
-    p {
-      text-transform: capitalize;
-    }
-  }
-
-  .icon {
-    width: 1.2rem;
-    height: 1.2rem;
-  }
-
 }
 
-.work {
+.oneTask .toogle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  button,
+  label {
+    width: min-content;
+  }
+
+  input {
+    display: none;
+  }
+
+  button {
+    border: none;
+    width: min-content;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.oneTask .details {
+  flex: 1;
+  min-width: 0;
+
+  * {
+    line-height: 1.4;
+    color: var(--text);
+    text-align: start;
+  }
+
+  h3,
+  p {
+    text-transform: capitalize;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: var(--text-h);
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  > div {
+    font-size: 0.75rem;
+    color: var(--text);
+    opacity: 0.8;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.oneTask .icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.oneTask .taskFinish {
+  &.true {
+    text-decoration: line-through;
+  }
+
+  &.false {
+    text-decoration: none;
+  }
+}
+
+.oneTask.work {
   background-color: var(--work);
 }
 
-.study {
+.oneTask.study {
   background-color: var(--study);
 }
 
-.personal {
+.oneTask.personal {
   background-color: var(--personal);
 }
 
-.shopping {
+.oneTask.shopping {
   background-color: var(--shopping);
 }
 
-.other {
+.oneTask.other {
   background-color: var(--other);
 }
 
-.undefined {
+.oneTask.undefined {
   background-color: var(--undefined);
 }
