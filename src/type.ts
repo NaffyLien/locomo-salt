@@ -11,6 +11,7 @@ export type TaskListProps = {
   deleteTask: (index: number) => void,
   finishTask: (index: number) => void,
   editTask: (index: number, task: Task) => void,
+  onEditTask: (index: number) => void,
 }
 
 export type TaskProps = {
@@ -19,4 +20,5 @@ export type TaskProps = {
   deleteTask: (index: number) => void,
   finishTask: (index: number) => void,
   editTask: (index: number, task: Task) => void,
+  onEditTask: (index: number) => void,
 }

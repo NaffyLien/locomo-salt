@@ -7,7 +7,7 @@ import check from '../../assets/check-square-svgrepo-com.svg'
 import { TaskType } from '../../utils'
 
 const OneTask = (props: TaskProps) => {
-  return <div className={`oneTask ${TaskType(props.task)} ${props.idx} `}>
+  return <div className={`oneTask ${TaskType(props.task)} ${props.idx}`}>
     <div className='toogle'>
       <input
         type="checkbox"
@@ -19,14 +19,13 @@ const OneTask = (props: TaskProps) => {
         htmlFor={`task-${props.idx}`}
         className={props.task.completed ? 'taskFinish true' : 'taskFinish false'}
       >
-        {/* // onDoubleClick={() => setEdit(props.idx)} */}
         {props.task.completed
           ? <img className='icon' src={check} alt='Delete task' />
           : <img className='icon' src={uncheck} alt='Delete task' />}
 
       </label>
 
-      <button aria-label='Edit task' onClick={() => props.deleteTask(props.idx)}>
+      <button aria-label='Edit task' onClick={() => props.onEditTask(props.idx)}>
         <img className='icon' src={edit} alt='Edit task' />
       </button>
 
@@ -42,14 +41,6 @@ const OneTask = (props: TaskProps) => {
       </div>
       {props.task.details !== '' && <p>{props.task.details}</p>}
     </div>
-
-
-    {/* {edit == props.key && <TaskEdit
-      idx={props.key}
-      modifTask={props.task}
-      editTask={editTask}
-      clearTasks={() => setEdit(null)}
-    />} */}
   </div>
 }
 

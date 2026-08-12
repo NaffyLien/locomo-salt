@@ -3,12 +3,14 @@ import { useEffect, useState } from 'react'
 import TaskInput from './components/TaskInput'
 import TaskLeft from './components/TaskLeft'
 import TaskList from './components/TaskList'
+import TaskEdit from './components/TaskEdit'
 import type { Task } from './type'
 import HeaderSection from './components/HeaderSection'
 
 const App = () => {
   const maxTasks = 10
   const [newNote, setNewNote] = useState(false)
+  const [editingIndex, setEditingIndex] = useState<number | null>(null)
 
   const handleTaskInputShow = () => {
     setNewNote(!newNote)
@@ -36,6 +38,7 @@ const App = () => {
     setTasks(tasks.map((task, index) => (
       indexTask == index ? taskEdit : task
     )))
+    setEditingIndex(null)
   }
 
   const handleDeleteTask = (indexToDelete: number) => {
@@ -66,6 +69,14 @@ const App = () => {
     <HeaderSection
       showTaskInput={handleTaskInputShow}
     />
+    {editingIndex !== null && (
+      <TaskEdit
+        idx={editingIndex}
+        modifTask={tasks[editingIndex]}
+        editTask={handleEditTask}
+        clearTasks={() => setEditingIndex(null)}
+      />
+    )}
     <article>
       {newNote && <TaskInput
         addNewTask={handleAddNewTask}
@@ -77,6 +88,7 @@ const App = () => {
         deleteTask={handleDeleteTask}
         finishTask={handleFinishTask}
         editTask={handleEditTask}
+        onEditTask={setEditingIndex}
       />
 
     </article>

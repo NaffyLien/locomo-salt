@@ -3,7 +3,7 @@ import './taskList.css'
 // import { useState } from 'react'
 import type { TaskListProps } from '../../type'
 
-const TaskList = ({ tasks, deleteTask, finishTask, editTask }: TaskListProps) => {
+const TaskList = ({ tasks, deleteTask, finishTask, editTask, onEditTask }: TaskListProps) => {
   // const [edit, setEdit] = useState<number | null>()
 
   return <section className='taskList'>
@@ -17,6 +17,7 @@ const TaskList = ({ tasks, deleteTask, finishTask, editTask }: TaskListProps) =>
           deleteTask={deleteTask}
           finishTask={finishTask}
           editTask={editTask}
+          onEditTask={onEditTask}
         />
       ))}
     </div>
