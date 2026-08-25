@@ -20,8 +20,8 @@ const OneTask = (props: TaskProps) => {
         className={props.task.completed ? 'taskFinish true' : 'taskFinish false'}
       >
         {props.task.completed
-          ? <img className='icon' src={check} alt='Delete task' />
-          : <img className='icon' src={uncheck} alt='Delete task' />}
+          ? <img className='icon' src={check} alt='Finished task' />
+          : <img className='icon' src={uncheck} alt='Unfinished task' />}
 
       </label>
 
@@ -39,7 +39,7 @@ const OneTask = (props: TaskProps) => {
         <span>{props.task.dueDate ? props.task.dueDate + " | " : null}</span>
         <span>{props.task.category}</span>
       </div>
-      {props.task.details !== '' && <p>{props.task.details}</p>}
+      {props.task.details !== '' && <div className='detail'>{props.task.details}</div>}
     </div>
   </div>
 }

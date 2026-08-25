@@ -3,12 +3,9 @@
   text-align: center;
 }
 
-.taskLeft a {
+.taskLeft span {
   color: var(--accent);
   text-decoration: none;
   cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
+  text-decoration: underline;
 }
