@@ -1,0 +1,11 @@
+{
+  "name": "NoteBulk - Your closest closet note",
+  "short_name": "NoteBulk",
+  "description": "A simple task and note-taking app",
+  "start_url": "/locomo-salt/",
+  "scope": "/locomo-salt/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "lang": "en"
+}
