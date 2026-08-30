@@ -1,23 +1,24 @@
-import OneTask from '../OneTask'
+import TaskCard from '../TaskCard'
 import './taskList.css'
-// import { useState } from 'react'
 import type { TaskListProps } from '../../type'
 
-const TaskList = ({ tasks, deleteTask, finishTask, editTask, onEditTask }: TaskListProps) => {
-  // const [edit, setEdit] = useState<number | null>()
+const TaskList = (props: TaskListProps) => {
 
   return <section className='taskList'>
-    <h2 className='listTitle'>Task lists</h2>
+    <div className="listTitle">
+      <h2 className=''>Task lists</h2>
+      {props.fnsTask!==0 && <span onClick={props.clearTask}>Clear {props.fnsTask} finished task?</span>}
+    </div>
     <div className='list'>
-      {tasks.map((task, index) => (
-        <OneTask
+      {props.tasks.map((task, index) => (
+        <TaskCard
           key={index}
           idx={index}
           task={task}
-          deleteTask={deleteTask}
-          finishTask={finishTask}
-          editTask={editTask}
-          onEditTask={onEditTask}
+          deleteTask={props.deleteTask}
+          finishTask={props.finishTask}
+          editTask={props.editTask}
+          onEditTask={props.onEditTask}
         />
       ))}
     </div>

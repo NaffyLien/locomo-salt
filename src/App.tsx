@@ -1,7 +1,6 @@
 import './App.css'
 import { useEffect, useState } from 'react'
 import TaskInput from './components/TaskInput'
-import TaskLeft from './components/TaskLeft'
 import TaskList from './components/TaskList'
 import TaskEdit from './components/TaskEdit'
 import type { Task } from './type'
@@ -19,7 +18,7 @@ const App = () => {
   const [tasks, setTasks] = useState<Task[]>(() => {
     const saved = localStorage.getItem("tasks")
     if (saved) return JSON.parse(saved)
-    return [{ name: "Learn React", completed: false, category:'Work' }]
+    return [{ name: "Learn React", completed: false, category: 'Work' }]
   })
 
   const fnsTasks = (tasks.filter((task) => (
@@ -89,14 +88,11 @@ const App = () => {
         finishTask={handleFinishTask}
         editTask={handleEditTask}
         onEditTask={setEditingIndex}
+        lfTask={taskLeft}
+        fnsTask={fnsTasks}
+        clearTask={handleClearTasks}
       />
-
     </article>
-    <TaskLeft
-      lfTask={taskLeft}
-      fnsTask={fnsTasks}
-      clearTask={handleClearTasks}
-    />
   </div >
 }
 

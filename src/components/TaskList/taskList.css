@@ -2,14 +2,22 @@
   margin: 1.5rem 0 0.75rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.taskList .listTitle span{
+  text-decoration: underline;
+  color: var(--accent);
 }
 
 .taskList .list {
   columns: 4;
-  column-gap: 0.8rem;
+  column-gap: 1.5rem;
 
   @media (max-width: 2126px) {
-    columns: 5;
+    columns: 4;
   }
 
   @media (max-width: 1022px) {

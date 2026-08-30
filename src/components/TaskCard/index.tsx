@@ -6,7 +6,7 @@ import uncheck from '../../assets/checkbox-unchecked-svgrepo-com.svg'
 import check from '../../assets/check-square-svgrepo-com.svg'
 import { TaskType } from '../../utils'
 
-const OneTask = (props: TaskProps) => {
+const TaskCard = (props: TaskProps) => {
   return <div className={`oneTask ${TaskType(props.task)} ${props.idx}`}>
     <div className='toogle'>
       <input
@@ -44,4 +44,4 @@ const OneTask = (props: TaskProps) => {
   </div>
 }
 
-export default OneTask
+export default TaskCard

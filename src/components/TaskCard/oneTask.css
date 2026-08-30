@@ -6,13 +6,13 @@
   align-items: flex-start;
   gap: 0.5rem;
   border: 1px solid var(--border);
-  border-radius: 15px;
+  border-radius: .5rem;
   padding: 1rem;
   background-color: var(--bg);
   box-sizing: border-box;
   overflow-x: hidden;
   box-shadow: var(--shadow);
-  margin-bottom: .8rem;
+  margin-bottom: 1.5rem;
 }
 
 .oneTask .toogle {
@@ -63,7 +63,7 @@
   }
 
   p {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     margin-top: 0.25rem;
   }
 
@@ -75,7 +75,7 @@
   }
 
   .detail{
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }
 

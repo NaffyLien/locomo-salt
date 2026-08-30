@@ -1,6 +1,6 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
+  --text: #48365e;
+  --text-h: #2b1465;
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
@@ -51,7 +51,7 @@
     --accent-border: rgba(192, 132, 252, 0.5);
     --social-bg: rgba(47, 48, 58, 0.5);
     --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+      rgba(0, 0, 0, 0.2) 0 10px 15px -3px, rgba(0, 0, 0, 0.15) 0 4px 6px -2px;
   }
 
   #social .button-icon {
