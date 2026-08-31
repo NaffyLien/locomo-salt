@@ -12,6 +12,8 @@
 
 .app article {
   margin: 2rem auto;
+  min-height: 80vh;
+  border-inline: 1px solid var(--border);
 }
 
 .app p {
