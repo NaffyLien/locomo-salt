@@ -12,7 +12,6 @@ export type TaskListProps = {
   finishTask: (index: number) => void,
   editTask: (index: number, task: Task) => void,
   onEditTask: (index: number) => void,  
-  lfTask: number,
   fnsTask: number, 
   clearTask: () => void
 }

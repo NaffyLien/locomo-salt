@@ -7,7 +7,6 @@ import type { Task } from './type'
 import HeaderSection from './components/HeaderSection'
 
 const App = () => {
-  const maxTasks = 10
   const [newNote, setNewNote] = useState(false)
   const [editingIndex, setEditingIndex] = useState<number | null>(null)
 
@@ -25,12 +24,9 @@ const App = () => {
     task.completed
   ))).length
 
-  const taskLeft = maxTasks - tasks.length
 
   const handleAddNewTask = (newTask: Task) => {
-    if (tasks.length < maxTasks) {
-      setTasks([...tasks, newTask])
-    }
+    setTasks([...tasks, newTask])
   }
 
   const handleEditTask = (indexTask: number, taskEdit: Task) => {
@@ -88,7 +84,6 @@ const App = () => {
         finishTask={handleFinishTask}
         editTask={handleEditTask}
         onEditTask={setEditingIndex}
-        lfTask={taskLeft}
         fnsTask={fnsTasks}
         clearTask={handleClearTasks}
       />

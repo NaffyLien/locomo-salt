@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) navigator.serviceWorker.register('/locomo-salt/dev-sw.js?dev-sw', { scope: '/locomo-salt/', type: 'classic' })
